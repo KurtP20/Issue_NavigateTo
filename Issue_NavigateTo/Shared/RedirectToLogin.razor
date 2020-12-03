@@ -1,0 +1,12 @@
+﻿@inject NavigationManager navigationManager
+@code {
+
+    protected override void OnInitialized()
+    {
+        // https://stackoverflow.com/questions/58076758/navigationerror-on-navigateto
+
+        navigationManager.NavigateTo("Identity/Account/Login?returnUrl=" +
+            Uri.EscapeDataString(navigationManager.Uri), true);
+
+    }
+}
